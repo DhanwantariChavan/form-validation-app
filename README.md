@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Form Validation App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React-based registration form with comprehensive validation and routing functionality.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Complete Form Validation**: Real-time validation for all form fields
+- **User-Friendly Interface**: Clean and simple design with error messages
+- **Password Security**: Show/hide password functionality 
+- **Dynamic Dropdowns**: Country selection affects city options
+- **Phone Number Validation**: Country code integration with phone number
+- **Document Validation**: PAN and Aadhar number format validation
+- **Routing**: Navigation between form and display pages
 
-### `npm start`
+## Form Fields
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **First Name**: Required, alphabets only, minimum 2 characters
+- **Last Name**: Required, alphabets only, minimum 2 characters
+- **Username**: Required, alphanumeric, 3-20 characters
+- **Email**: Required, valid email format
+- **Password**: Required, minimum 8 characters with uppercase, lowercase, number, and special character
+- **Phone Number**: Required, 10 digits with country code
+- **Country**: Required, dropdown selection
+- **City**: Required, dropdown based on selected country
+- **PAN Number**: Required, format ABCDE1234F
+- **Aadhar Number**: Required, 12 digits
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+src/
+├── components/
+│   ├── FormComponent.js      # Main form component with validation
+│   ├── DisplayComponent.js   # Display submitted data
+│   └── ValidationUtils.js    # Validation functions
+├── data/
+│   └── countriesData.js      # Countries and cities data
+├── App.js                    # Main app with routing
+├── App.css                   # Styling
+└── index.js                  # Entry point
+```
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React**: Frontend framework
+- **React Router**: For navigation between pages
+- **CSS3**: For styling and responsiveness
+- **JavaScript ES6+**: Modern JavaScript features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Validation Rules
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Password Requirements
+- Minimum 8 characters
+- At least one uppercase letter
+- At least one lowercase letter
+- At least one number
+- At least one special character (@$!%*?&)
 
-### `npm run eject`
+### PAN Number Format
+- Format: ABCDE1234F
+- 5 uppercase letters, 4 digits, 1 uppercase letter
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Phone Number
+- 10 digits only
+- Displayed with country code
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Aadhar Number
+- Exactly 12 digits
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+### Routing
+- Form page at root route (/)
+- Display page at /display route
+- Navigation with form data passed via state
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Registration Form
+![Form Screenshot](screenshots/form.PNG)
 
-### Analyzing the Bundle Size
+### Success Page
+![Success Screenshot](screenshots/success.PNG)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note**: This is a demo project for learning React form validation and routing concepts.
